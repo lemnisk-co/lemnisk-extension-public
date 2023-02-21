@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Extension Configuration</title>
+    <meta name="description" content="Page Call">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../resources/main.css">
+    <script src="../resources/viewhelpers.js"></script>
+    <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="content"></div>
+    <div id="event-data-form">
+        <form class="p-3">
+            <fieldset class="p-3 scheduler-border">
+                <legend id="g_name" class="scheduler-border">Connect Details</legend>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="writeKey">Write Key</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="writeKey">
+                    </div>
+                    <div class="fa-i" data-de="writeKey">
+                        <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="clientId">Client ID</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="clientId">
+                    </div>
+                    <div class="fa-i" data-de="clientId">
+                        <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </fieldset>
+
+
+        </form>
+    </div>
+
+    <script>
+        deStuff();
+    </script>
+</div>
+
+
+<script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+<script>
+    window.extensionBridge.register({
+        init: function (info) {
+            if (info.settings) {
+                // Populate form values from persisted settings.
+                document.getElementById('writeKey').value = info.settings.writeKey || '';
+                document.getElementById('clientId').value = info.settings.clientId || '';
+            }
+        },
+        getSettings: function () {
+            // Return settings object from form values.
+            return {
+                writeKey: document.getElementById('writeKey').value || '',
+                clientId: document.getElementById('clientId').value || ''
+            };
+        },
+
+        validate: function () {
+            return true;
+        }
+    });
+</script>
+</body>
+</html>

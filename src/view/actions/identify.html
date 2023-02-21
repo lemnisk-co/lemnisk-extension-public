@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Identify Action</title>
+  <meta name="description" content="Identify Action">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="../resources/main.css">
+  <script src="../resources/viewhelpers.js"></script>
+  <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+  <div id="content"></div>
+  <div id="event-data-form">
+    <form class="p-3">
+      <fieldset class="p-3 scheduler-border">
+        <legend id="g_id" class="scheduler-border">ID</legend>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="userId">User Id</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="userId">
+          </div>
+          <div class="fa-i" data-de="userId">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="p-3 scheduler-border">
+        <legend id="g_props" class="scheduler-border">Properties</legend>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="title">Title</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="title">
+          </div>
+          <div class="fa-i" data-de="title">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="fullName">Full Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="fullName">
+          </div>
+          <div class="fa-i" data-de="fullName">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="firstName">First Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="firstName">
+          </div>
+          <div class="fa-i" data-de="firstName">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="lastName">Last Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="lastName">
+          </div>
+          <div class="fa-i" data-de="lastName">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="gender">Gender</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="gender">
+          </div>
+          <div class="fa-i" data-de="gender">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="dob">DOB</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="dob">
+          </div>
+          <div class="fa-i" data-de="dob">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="age">Age</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="age">
+          </div>
+          <div class="fa-i" data-de="age">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="address">Address</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="address">
+          </div>
+          <div class="fa-i" data-de="address">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="province">Province</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="province">
+          </div>
+          <div class="fa-i" data-de="province">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="p-3 scheduler-border">
+        <legend id="g_other_ids" class="scheduler-border">Other IDs</legend>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="email">Email</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="email">
+          </div>
+          <div class="fa-i" data-de="email">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="phone">Phone</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="phone">
+          </div>
+          <div class="fa-i" data-de="phone">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="crmid">CRM ID</label>
+          <div class="col-sm-5">
+              <input type="text" class="form-control" id="crmid">
+          </div>
+          <div class="fa-i" data-de="crmid">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="visitor_id">Visitor ID</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="visitor_id">
+          </div>
+          <div class="fa-i" data-de="visitor_id">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="tel">Tel</label>
+          <div class="col-sm-5">
+              <input type="text" class="form-control" id="tel">
+          </div>
+          <div class="fa-i" data-de="tel">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="memberNumber">Member Number</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="memberNumber">
+            </div>
+            <div class="fa-i" data-de="memberNumber">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+        </div>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Other Additional Ids</legend>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 1</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id1_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id1_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id1_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id1_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id1_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 2</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id2_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id2_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id2_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id2_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id2_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 3</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id3_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id3_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id3_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id3_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id3_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 4</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id4_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id4_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id4_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id4_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id4_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 5</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id5_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id5_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id5_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id5_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id5_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+        </fieldset>
+      </fieldset>
+
+    </form>
+  </div>
+
+  <script>
+    deStuff();
+  </script>
+</div>
+
+<script>
+  window.extensionBridge.register({
+    otherIdsKey: ["visitor_id","email","phone","crmid","tel","memberNumber"],
+    propsKey: ["title","fullName","firstName","lastName","gender","dob","age","address","province"],
+    idsMapping: {},
+    init: function (info) {
+      if (info.settings) {
+        // Populate form values from persisted settings.
+        document.getElementById('userId').value = info.settings.g_id.userId || '';
+        // initializing props for page method
+        for(var props in info.settings.g_props){
+          document.getElementById(props).value =info.settings.g_props[props];
+        }
+        // initializing otherids for page method
+        for (var otherIds in info.settings.g_other_ids){
+          if(this.otherIdsKey.includes(otherIds)){
+            document.getElementById(otherIds).value = info.settings.g_other_ids[otherIds];
+          }
+        }
+        for(var ids in info.settings.g_init_ids){
+          document.getElementById(info.settings.g_init_ids[ids].propKeyFieldId).value = info.settings.g_init_ids[ids].propKeyValue;
+          document.getElementById(info.settings.g_init_ids[ids].propValueFieldId).value = info.settings.g_other_ids[ids];
+        }
+      }
+    },
+    setProps: function(){
+      var props = {};
+      for(var i=0; i< this.propsKey.length; i++){
+          if(document.getElementById(this.propsKey[i]).value !='' && 
+          document.getElementById(this.propsKey[i]).value != null &&
+          document.getElementById(this.propsKey[i]).value != undefined ){
+              props[this.propsKey[i]] = document.getElementById(this.propsKey[i]).value;
+          }
+      }
+      return props;
+    },
+    setOtherIds: function (){
+      var otherIds = {};
+      for (var i=0; i< this.otherIdsKey.length; i++){
+          if(document.getElementById(this.otherIdsKey[i]).value !='' && 
+          document.getElementById(this.otherIdsKey[i]).value != null &&
+          document.getElementById(this.otherIdsKey[i]).value != undefined ){
+              otherIds[this.otherIdsKey[i]] = document.getElementById(this.otherIdsKey[i]).value;
+          }
+      }
+      for(var i=1; i < 6; i++){
+        if(document.getElementById('id'+i+'_key').value != null && 
+           document.getElementById('id'+i+'_key').value != undefined &&
+           document.getElementById('id'+i+'_key').value != ''){
+              if(document.getElementById('id'+i+'_value').value != null && 
+                  document.getElementById('id'+i+'_value').value != undefined &&
+                  document.getElementById('id'+i+'_value').value != ''){
+                    otherIds[document.getElementById('id'+i+'_key').value] = document.getElementById('id'+i+'_value').value;
+                    this.idsMapping[document.getElementById('id'+i+'_key').value] = {
+                      "propKeyFieldId": 'id'+i+'_key',
+                      "propValueFieldId": 'id'+i+'_value',
+                      "propKeyValue": document.getElementById('id'+i+'_key').value
+                    }
+              }
+        }
+      }
+      return otherIds;
+    },
+    getSettings: function () {
+      // Return settings object from form values.
+      return {
+        'g_id': { userId: document.getElementById('userId').value || ''},
+        'g_props': this.setProps(),
+        'g_other_ids': this.setOtherIds(),
+        'g_init_ids': this.idsMapping
+      };
+    },
+
+    validate: function () {
+      return true;
+    }
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+{
+  "displayName": "Lemnisk",
+  "name": "lemnisk",
+  "platform": "web",
+  "version": "1.0.10",
+  "description": "Lemnisk pixel listener for capturing customer behaviour",
+  "iconPath": "resources/icons/lemnisk.svg",
+  "author": {
+    "name": "Lemnisk",
+    "url": "https://www.lemnisk.co",
+    "email": "praveen.ds@lemnisk.co"
+  },
+  "exchangeUrl": "https://exchange.adobe.com/apps/ec/107660/lemnisk",
+  "viewBasePath": "src/view/",
+  "configuration": {
+    "viewPath": "configuration/configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "writeKey": {
+          "type": "string",
+          "length": 20
+        },
+        "clientId": {
+          "type": "string",
+          "length": 4
+        }
+      },
+      "required": [
+        "writeKey",
+        "clientId"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "actions": [
+    {
+      "displayName": "Page",
+      "name": "page",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/actions/page.js",
+      "viewPath": "actions/page.html"
+    },
+    {
+      "displayName": "Identify",
+      "name": "identify",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/actions/identify.js",
+      "viewPath": "actions/identify.html"
+    },
+    {
+      "displayName": "Track",
+      "name": "track",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/actions/track.js",
+      "viewPath": "actions/track.html"
+    }
+  ]
+}

@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Track Action</title>
+  <meta name="description" content="Track Action">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="../resources/main.css">
+  <script src="../resources/viewhelpers.js"></script>
+  <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+  <div id="content"></div>
+  <div id="event-data-form">
+    <form class="p-3">
+      <fieldset class="p-3 scheduler-border">
+        <legend id="g_event" class="scheduler-border">Event Name</legend>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="event">Event Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="event">
+          </div>
+          <div class="fa-i" data-de="event">
+            <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="p-3 scheduler-border">
+        <legend id="g_other_ids" class="scheduler-border">Other IDs</legend>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="visitor_id">Visitor ID</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="visitor_id">
+            </div>
+            <div class="fa-i" data-de="visitor_id">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="email">Email</label>
+          <div class="col-sm-5">
+              <input type="text" class="form-control" id="email">
+          </div>
+          <div class="fa-i" data-de="email">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="phone">Phone</label>
+          <div class="col-sm-5">
+              <input type="text" class="form-control" id="phone">
+          </div>
+          <div class="fa-i" data-de="phone">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="crmid">CRM ID</label>
+          <div class="col-sm-5">
+              <input type="text" class="form-control" id="crmid">
+          </div>
+          <div class="fa-i" data-de="crmid">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4 col-form-label" for="tel">Tel</label>
+          <div class="col-sm-5">
+              <input type="text" class="form-control" id="tel">
+          </div>
+          <div class="fa-i" data-de="tel">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="memberNumber">Member Number</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="memberNumber">
+            </div>
+            <div class="fa-i" data-de="memberNumber">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+        </div>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Other Additional Ids</legend>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 1</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id1_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id1_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id1_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id1_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id1_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 2</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id2_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id2_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id2_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id2_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id2_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 3</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id3_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id3_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id3_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id3_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id3_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 4</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id4_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id4_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id4_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id4_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id4_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="p-3 scheduler-border">
+            <legend id="g_props" class="scheduler-border">Id 5</legend>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id5_key">Key</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id5_key">
+              </div>
+              <label class="col-sm-1 col-form-label paddingLeftRight" for="id5_value">Value</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="id5_value">
+              </div>
+              <div class="fa-i col-sm-2" data-de="id5_value">
+                <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+              </div>
+            </div>
+          </fieldset>
+        </fieldset>
+      </fieldset>
+      <fieldset class="p-3 scheduler-border">
+        <legend id="g_props" class="scheduler-border">Properties</legend>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 1</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop1_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop1_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop1_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop1_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop1_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 2</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop2_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop2_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop2_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop2_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop2_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 3</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop3_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop3_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop3_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop3_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop3_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 4</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop4_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop4_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop4_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop4_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop4_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 5</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop5_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop5_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop5_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop5_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop5_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 6</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop6_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop6_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop6_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop6_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop6_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 7</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop7_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop7_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop7_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop7_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop7_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 8</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop8_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop8_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop8_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop8_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop8_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 9</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop9_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop9_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop9_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop9_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop9_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 10</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop10_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop10_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop10_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop10_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop10_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 11</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop11_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop11_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop11_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop11_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop11_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 12</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop12_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop12_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop12_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop12_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop12_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 13</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop13_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop13_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop13_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop13_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop13_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 14</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop14_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop14_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop14_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop14_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop14_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 15</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop15_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop15_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop15_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop15_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop15_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 16</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop16_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop16_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop16_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop16_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop16_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 17</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop17_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop17_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop17_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop17_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop17_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 18</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop18_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop18_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop18_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop18_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop18_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 19</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop19_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop19_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop19_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop19_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop19_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 20</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop20_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop20_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop20_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop20_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop20_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 21</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop21_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop21_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop21_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop21_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop21_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 22</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop22_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop22_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop22_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop22_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop22_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 23</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop23_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop23_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop23_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop23_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop23_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 24</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop24_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop24_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop24_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop24_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop24_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 25</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop25_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop25_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop25_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop25_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop25_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 26</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop26_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop26_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop26_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop26_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop26_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 27</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop27_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop27_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop27_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop27_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop27_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 28</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop28_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop28_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop28_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop28_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop28_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 29</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop29_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop29_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop29_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop29_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop29_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 30</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop30_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop30_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop30_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop30_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop30_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 31</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop31_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop31_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop31_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop31_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop31_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 32</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop32_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop32_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop32_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop32_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop32_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 33</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop33_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop33_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop33_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop33_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop33_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 34</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop34_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop34_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop34_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop34_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop34_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 35</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop35_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop35_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop35_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop35_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop35_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 36</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop36_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop36_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop36_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop36_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop36_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 37</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop37_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop37_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop37_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop37_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop37_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 38</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop38_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop38_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop38_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop38_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop38_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 39</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop39_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop39_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop39_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop39_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop39_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="p-3 scheduler-border">
+          <legend id="g_props" class="scheduler-border">Prop 40</legend>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop40_key">Key</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop40_key">
+            </div>
+            <label class="col-sm-1 col-form-label paddingLeftRight" for="prop40_value">Value</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="prop40_value">
+            </div>
+            <div class="fa-i col-sm-2" data-de="prop40_value">
+              <span class="fa fa-database fa-lg" aria-hidden="true"></span>
+            </div>
+          </div>
+        </fieldset>
+      </fieldset>
+    </form>
+  </div>
+
+  <script>
+    deStuff();
+  </script>
+</div>
+
+<script>
+  window.extensionBridge.register({
+    otherIdsKey: ["visitor_id","email","phone","crmid","tel","memberNumber"],
+    propsMappingForInitialization: {},
+    idsMapping: {},
+    init: function (info) {
+      if (info.settings) {
+        // Populate form values from persisted settings.
+        document.getElementById('event').value = info.settings.g_event.event || '';
+        for (var otherIds in info.settings.g_id){
+          if(this.otherIdsKey.includes(otherIds)){
+            document.getElementById(otherIds).value = info.settings.g_id[otherIds];
+          }
+        }
+        for(var ids in info.settings.g_init_ids){
+          document.getElementById(info.settings.g_init_ids[ids].propKeyFieldId).value = info.settings.g_init_ids[ids].propKeyValue;
+          document.getElementById(info.settings.g_init_ids[ids].propValueFieldId).value = info.settings.g_id[ids];
+        }
+        for(var props in info.settings.g_props){
+          document.getElementById(info.settings.g_init_props[props].propKeyFieldId).value = info.settings.g_init_props[props].propKeyValue;
+          document.getElementById(info.settings.g_init_props[props].propValueFieldId).value = info.settings.g_props[props];
+        }
+      }
+    },
+    setProps: function (){
+      var props = {};
+      for(var i=1 ; i<41; i++){
+        if(document.getElementById('prop'+i+'_key').value != null && 
+           document.getElementById('prop'+i+'_key').value != undefined &&
+           document.getElementById('prop'+i+'_key').value != ''){
+             if(document.getElementById('prop'+i+'_value').value != null && 
+                document.getElementById('prop'+i+'_value').value != undefined &&
+                document.getElementById('prop'+i+'_value').value != ''){
+                  props[document.getElementById('prop'+i+'_key').value] = document.getElementById('prop'+i+'_value').value;
+                  this.propsMappingForInitialization[document.getElementById('prop'+i+'_key').value] = {
+                    "propKeyFieldId": 'prop'+i+'_key',
+                    "propValueFieldId": 'prop'+i+'_value',
+                    "propKeyValue": document.getElementById('prop'+i+'_key').value
+                  }
+              }
+        }
+
+      }
+      return props;
+    },
+    setOtherIds: function (){
+      var otherIds = {};
+      for (var i=0; i< this.otherIdsKey.length; i++){
+        if(document.getElementById(this.otherIdsKey[i]).value !='' && 
+          document.getElementById(this.otherIdsKey[i]).value != null &&
+          document.getElementById(this.otherIdsKey[i]).value != undefined ){
+            otherIds[this.otherIdsKey[i]] = document.getElementById(this.otherIdsKey[i]).value;
+        }
+      }
+      for(var i=1; i < 6; i++){
+        if(document.getElementById('id'+i+'_key').value != null && 
+           document.getElementById('id'+i+'_key').value != undefined &&
+           document.getElementById('id'+i+'_key').value != ''){
+              if(document.getElementById('id'+i+'_value').value != null && 
+                  document.getElementById('id'+i+'_value').value != undefined &&
+                  document.getElementById('id'+i+'_value').value != ''){
+                    otherIds[document.getElementById('id'+i+'_key').value] = document.getElementById('id'+i+'_value').value;
+                    this.idsMapping[document.getElementById('id'+i+'_key').value] = {
+                      "propKeyFieldId": 'id'+i+'_key',
+                      "propValueFieldId": 'id'+i+'_value',
+                      "propKeyValue": document.getElementById('id'+i+'_key').value
+                    }
+              }
+        }
+      }
+      return otherIds;
+    },
+    getSettings: function () {
+      // Return settings object from form values.
+      return {
+        'g_event': {event: document.getElementById('event').value || ''},
+        'g_props': this.setProps(),
+        'g_id': this.setOtherIds(),
+        'g_init_props': this.propsMappingForInitialization,
+        'g_init_ids': this.idsMapping
+      };
+    },
+
+    validate: function () {
+      return true;
+    }
+  });
+</script>
+</body>
+
+</html>
